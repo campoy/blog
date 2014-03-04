@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+<title>Blog Post feed</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header group">
+      <h1>
+        <a href="/">Blog Post Feed</a>
+      </h1>
+    </div>
+
+
+    {{if .User}}
+      <div id="upload-wrap">
+        <div id="upload">
+          <div class="account group">
+            <!-- /#account-thumb -->
+            <div id="account-name">
+              <h2>{{.User}}</h2>
+              <p><a
+                  href="{{.LogoutURL}}">Sign
+                  out</a>
+              </p>
+            </div>
+            <!-- /#account-name -->
+          </div>
+          <!-- /.account -->
+          <div id="upload-form">
+            <form action="/post" method="post"
+              enctype="multipart/form-data">
+              <input type="text" name="title" placeholder="Your post"></input>
+              <textarea name="content" placeholder="Content"></textarea>
+              <input class="active btn" type="submit" value="Create Post">
+            </form>
+          </div>
+        </div>
+        <!-- /#upload -->
+      </div>
+      <!-- /#upload-wrap -->
+
+      <!-- KK -->
+      <div id="post-list">
+        {{range .Posts}}
+          <div class="feed">
+            <div class="post group">
+              <div class="owner group">
+                <div class="desc">
+                  <h2>{{.Title}}</h2>
+                  <h3><a href="/{{.Author}}">{{.Author}}</a></h3>
+                  <p>{{.Text}}</p>
+                </div>
+              </div>
+            </div>
+            {{range .Comments}}
+              <div class="post group">
+                <div class="usr">
+                  <div class="comment">
+                    <h3><a href="/{{.Author}}">{{.Author}}</a></h3>
+                    <p>{{ .Text }}
+                  </div>
+                  <!-- /.comment -->
+                </div>
+                <!-- /.usr -->
+              </div>
+              <!-- /.post -->
+        	  {{end}}
+            <div class="post group">
+              <div class="usr last">
+                <div class="comment">
+                  <h3> {{$.User}} </h3>
+                  <form action="/comment" method="post">
+                    <!-- TODO enhance UI to post a comment -->
+                    <textarea id="comment-input" class="post-comment" name="comment"
+                      placeholder="Post a comment"></textarea>
+                    <input type="hidden" name="post-key" value="{{.Key}}"></input>
+                    <input id="comment-submit" class="inactive btn"
+                      type="submit" name="send" value="Post comment">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{else}}
+          <div class="feed">
+            <h2>No posts available</h2>
+          </div>
+        {{end}}
+      </div>
+    {{else}}
+      <div id="upload-wrap">
+        <div id="upload">
+          <div class="account group">
+            <!-- /#account-thumb -->
+            <div id="account-name">
+              <h2>Sign in first</h2>
+              <p><a
+                  href="{{.LoginURL}}">Sign
+                  in</a>
+              </p>
+            </div>
+            <!-- /#account-name -->
+          </div>
+        </div>
+        <!-- /#upload -->
+      </div>
+      <!-- /#upload-wrap -->
+    {{end}}
+
+  </div>
+  <!-- /.wrap -->
+
+</body>
+</html>

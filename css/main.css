@@ -1,0 +1,270 @@
+body {
+        font: 13px/19px Arial, Helvetica, sans-serif;
+}
+
+.wrap {
+        margin: 0 auto;
+        padding: 0 5px;
+        width: 950px;
+}
+
+.header {
+        margin: -8px 0 0 -1px;
+        padding: 0 0 16px 0;
+        width: 100%;
+}
+
+.glow {
+        width: 615px;
+        margin-right: 0;
+        height: 8px;
+        position: absolute;
+        top: 55px;
+        left: 10px;
+        opacity: 1;
+        border-top: 1px solid rgba(0, 0, 0, 0.4);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .3)), to(transparent));
+        -webkit-mask-box-image: -webkit-gradient(linear, left top, right top, color-stop(0.0, rgba(0,0,0,0)), color-stop(0.5, rgba(0,0,0,.8)), color-stop(1.0, rgba(0,0,0,0)));
+}
+
+h1 {
+        margin: 20px 0 0 0;
+        position: relative;
+}
+
+#upload-wrap {
+        float: right;
+        margin: 38px 0 0 0;
+        width: 300px;
+}
+
+#upload {
+        position: fixed;
+        width: 300px;
+}
+
+#upload .account {
+        width: 278px;
+}
+
+
+#upload .account #account-name {
+        margin: 10px 0 0 0;
+        width: 200px;
+}
+
+#upload .account #account-name h2 {
+        margin-top: 11px;
+}
+
+#upload .account #account-name p {
+        color: #888;
+        font-size: 12px;
+        margin: -10px 0 0 0;
+}
+
+#upload .account #account-name a {
+        text-decoration: none;
+}
+
+#upload .account #account-name a:hover {
+        text-decoration: underline;
+}
+
+.btn {
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        margin: 18px 0 0 0;
+        padding: 5px 14px;
+        text-decoration: none;
+}
+
+.active {
+        color: #fff;
+        background: -webkit-gradient(linear, left top, left bottom, from(#42aaff),to(#005BA5));
+        border: 1px solid #005BA5;
+        box-shadow: 0 0 3px #888;
+        text-shadow: 0 -1px 0 #005BA5;
+}
+
+.active:hover {
+        box-shadow: 0 0 5px #555;
+}
+
+.active:active {
+        box-shadow: inset 0 0 5px #666;
+}
+
+.inactive {
+        color: #333;
+        background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA),to(#DCDCDC));
+        border: 1px solid #c3c3c3;
+        box-shadow: 0 0 3px #d3d3d3;
+        text-shadow: 0 -1px 0 #f8f8f8;
+}
+
+.inactive:hover {
+        box-shadow: 0 0 4px #aaa;
+}
+
+.inactive:active {
+        box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25),0 1px 0 white
+}
+
+#upload .file {
+        margin: 10px 0 0 0;
+}
+
+#upload .check {
+        padding: 0 0 5px 18px;
+}
+
+.cancel {
+        color: #6E83FF;
+        font-size: 12px;
+        margin: 0 0 0 14px;
+        text-decoration: none;
+        text-shadow: 0 -1px 0 #fff;
+        cursor: pointer;
+}
+
+::-webkit-input-placeholder  {
+        font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+textarea, input {
+        width: 280px;
+        margin: 16px 0 0 0;
+        display: block;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #BDBDBD;
+        box-shadow: 0 0 2px #d8d8d8;
+}
+
+textarea {
+        height: 100px;
+        resize: vertical;
+}
+
+.post-comment {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        width: 423px;
+}
+
+.post-comment.collapsed {
+        height: 15px;
+}
+
+.post-comment.expanded {
+        height: 80px;
+}
+
+.feed {
+        background: #fff;
+        border: 1px solid #BDBDBD;
+        border-radius: 3px;
+        box-shadow: 0 0 2px #d8d8d8;
+        margin: 10px 0 10px 0;
+        float: left;
+        width: 630px;
+}
+
+.feed:first-child {
+        margin-top: 47px;
+}
+
+.feed:first-child {
+        margin-bottom: 40px;
+}
+
+.feed .post {
+        list-style-type: none;
+        margin: 0;
+        padding: 15px 15px 12px 15px;
+}
+
+.feed .post .owner {
+        background-color: #F8F8F8;
+        border: 1px solid #e3e3e3;
+        border-top: 1px solid #fff;
+        border-radius: 0 0 3px 3px;
+        margin: -5px 0 0 0;
+        padding: 10px;
+        width: 578px;
+}
+
+.feed .post .owner.me {
+        background-color: #EBFCFF;
+        border: 1px solid #BFEBF2;
+}
+
+.feed .post .owner .desc {
+        text-shadow: 0 -1px 0 #fff;
+        width: 500px;
+}
+
+.feed .post .owner .desc h3,
+.feed .post .usr h3 {
+        margin: 0;
+}
+
+.feed .post .owner .desc p,
+.feed .post .usr p  {
+        color: #444;
+        margin: 6px 0 0 0;
+}
+
+.feed .post .owner .desc p.timestamp,
+.feed .post .usr p.timestamp {
+        color: #999;
+        font: 10px Helvetica, Arial, sans-serif;
+        margin: 6px 0 4px 0;
+}
+
+.feed .post .usr {
+        border-bottom: 1px dotted #e9e9e9;
+        float: right;
+        padding: 0 0 18px 0;
+        width: 525px;
+}
+
+.feed .post .usr.last {
+        border-bottom: none;
+        padding: 0 0 10px 0;
+}
+
+.feed .post .usr .comment {
+        float: right;
+        text-shadow: 0 -1px 0 #fff;
+        width: 448px;
+}
+
+.group:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+}
+
+.image-wrap {
+  box-shadow: inset 0 0 10px 0 #999;
+  height: 600px;
+  line-height: 600px;
+  overflow: hidden;
+  width: 600px;
+}
+
+.photo-image {
+  vertical-align: middle;
+  width: 100%;
+}
