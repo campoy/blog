@@ -1,6 +1,7 @@
-* Design
+A blog system written in Go and running on App Engine.
 
-** Data model
+
+## Data model
 
 There's three kind of objects in the datastore:
 
@@ -18,7 +19,7 @@ Author property, containing the encoded key of a User.
 
 Finally, comments have a PostKey field with the key of their corresponding post. 
 
-** Application design
+## Application design
 
 The application queries are done in two steps which are actually executed
 concurrently.
@@ -41,7 +42,7 @@ current user.
 At the end of this we obtain the list of N newest posts with all its comments,
 and we ensure that any interaction of the current user is displayed to him.
 
-** Performance
+## Performance
 
 The datastore that we have developed allows high performance limiting the
 entities in a given entity group. Entity groups handle the interactions of
@@ -53,5 +54,3 @@ and the list will be eventually consistent.
 
 Finally, the usage of memcache to keep the list of the latest 10 posts and
 its comments limits the reads on the datastore.
-
-
