@@ -1,8 +1,5 @@
 * Design
 
-This application, corresponding to the final exam for the Google Cloud
-certification program, can be accessed on http://campoyblog.appspot.com.
-
 ** Data model
 
 There's three kind of objects in the datastore:
